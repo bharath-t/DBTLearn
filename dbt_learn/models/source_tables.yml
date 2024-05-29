@@ -1,0 +1,24 @@
+# tests cant be performed directly on souce tables here. create a separate sql in tests folder
+
+version: 2
+
+# use source name, table name when referencing in macro
+sources:
+  - name: data_source1
+    tags: ["source_tag"]
+    schema: public
+    tables:
+      - name: customers
+        description: "sample customer data"
+        columns:
+          - name: cust_id
+            description: customer id
+          - name: cust_name
+            description: customer name
+      - name: orders
+
+  # - name: data_source2
+  #   tags: ["source_tag"]
+  #   schema: public
+  #   tables:
+  #     - name: orders

@@ -1,0 +1,20 @@
+version: 2
+
+# moving all seed files to new schema "seeds"
+seeds:
+  - name: cust_det
+    config:
+      schema: "seeds"
+      quote_columns: false
+      delimiter: ","
+    columns:
+      - name: cust_name
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+column_types:
+  cust_det:
+    cust_name: varchar(10)
+    cust_state: varchar(20)
