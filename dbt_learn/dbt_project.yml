@@ -32,8 +32,14 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+  dbt_artifacts:
+    # +database: your_destination_database # optional, default is your target database
+    +schema: dbt_exec # moving all dbt artifact tables to separate schema
 
 # adding only tags globally, we can set others props in seeds properties.yml
 seeds:
   dbt_learn:
     +tags: ["seed_tag"]
+
+on-run-end:
+  - "{% if target.name == 'dev' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"

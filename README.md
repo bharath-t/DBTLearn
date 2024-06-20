@@ -244,3 +244,7 @@ to run: dbt source freshness
 
 14. Features tested:
     project.yml, profiles.yml, views, tables, seeds, sources, models, tags, docs, tests, macros, snapshots, additional modules (dbt_utils), source freshness
+
+15. DBT Artifacts Package:
+    This is used to monitor runtimes of models. This package will create additional tables which will capture runtimes of
+    each model for each invocation/execution.

@@ -2,3 +2,10 @@
 target/
 dbt_packages/
 logs/
+
+.DS_Store
+.vscode/
+logs/
+mydbt-env/
+
+dbt_learn/package-lock.yml
